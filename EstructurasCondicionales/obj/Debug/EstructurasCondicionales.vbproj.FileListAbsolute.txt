@@ -1,0 +1,13 @@
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\bin\Debug\EstructurasCondicionales.exe.config
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\bin\Debug\EstructurasCondicionales.exe
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\bin\Debug\EstructurasCondicionales.pdb
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\bin\Debug\EstructurasCondicionales.xml
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.vbproj.AssemblyReference.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.Form1.resources
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.Resources.resources
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.vbproj.GenerateResource.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.vbproj.CoreCompileInputs.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.exe
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.xml
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\EstructurasCondicionales\obj\Debug\EstructurasCondicionales.pdb

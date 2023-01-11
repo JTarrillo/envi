@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "prClase1", "prClase1.vbproj", "{7ED1F9B2-767F-4022-8E6D-610A9158D0F0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EstructurasCondicionales", "..\EstructurasCondicionales\EstructurasCondicionales.vbproj", "{9C0D4EDE-19F5-4BD0-B05E-8A0FE52EF5FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ED1F9B2-767F-4022-8E6D-610A9158D0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED1F9B2-767F-4022-8E6D-610A9158D0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED1F9B2-767F-4022-8E6D-610A9158D0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED1F9B2-767F-4022-8E6D-610A9158D0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0D4EDE-19F5-4BD0-B05E-8A0FE52EF5FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0D4EDE-19F5-4BD0-B05E-8A0FE52EF5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0D4EDE-19F5-4BD0-B05E-8A0FE52EF5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0D4EDE-19F5-4BD0-B05E-8A0FE52EF5FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E1E87BC-60A1-4942-8A89-8FA167C03B98}
+	EndGlobalSection
+EndGlobal
