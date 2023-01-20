@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaEntidad
+
+
 {
+
     public class EnvioMail
     {
         public int Id { get; set; }
@@ -22,4 +25,6 @@ namespace CapaEntidad
         public DateTime FechaEnvio { get; set; }
         public int ErrorId { get; set; }
     }
+
+
 }

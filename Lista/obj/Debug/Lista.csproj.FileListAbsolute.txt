@@ -1,0 +1,8 @@
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\bin\Debug\Lista.exe.config
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\bin\Debug\Lista.exe
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\bin\Debug\Lista.pdb
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\obj\Debug\Lista.csproj.AssemblyReference.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\obj\Debug\Lista.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\obj\Debug\Lista.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\obj\Debug\Lista.exe
+C:\Users\Jose\Downloads\EnvioDeNotificaciones\Lista\obj\Debug\Lista.pdb

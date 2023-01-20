@@ -11,6 +11,8 @@ namespace CapaDatos
 {
     public class CD_EnvioMail
     {
+
+      
         public List<EnvioMail> Listar()
         {
             List<EnvioMail> list = new List<EnvioMail>();
@@ -59,4 +61,6 @@ namespace CapaDatos
             return list;
         }
     }
+
+   
 }

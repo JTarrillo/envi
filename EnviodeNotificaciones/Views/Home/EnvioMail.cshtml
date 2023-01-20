@@ -4,5 +4,125 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EnvioMail</h2>
 
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Envio Mail</a></li>
+    <li class="breadcrumb-item active">Solicitud de envio </li>
+</ol>
+
+<div class="card">
+    <div class="card-header">
+
+        <i class="fas fa-users me-1"></i> Envio De Notificaciones
+    </div>
+
+    <div class="card-body">
+
+
+        <hr />
+
+        <table id="tabla" class="display cell-border" style="width: 100%">
+            <thead>
+                <tr>
+
+                    <th>Fecha</th>
+                    <th>Mensaje</th>
+                    <th>Asunto</th>
+
+                    <th>rrr</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script>
+
+        var tabladata;
+        var filaSeleccionada;
+
+
+
+          jQuery.ajax({
+                    url: '@Url.Action("ListarEnvios", "Home")',
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        console.log(data);
+                    }
+                })
+
+
+        tabladata = $("#tabla").DataTable({
+            responsive: true,
+            ordering: false,
+            "ajax": {
+                url: '@Url.Action("ListarEnvios", "Home")',
+                type: "GET",
+                dataType: "json",
+
+            },
+            "columns": [
+
+                {
+                    "data": "Fecha", render: function (value) {
+                        if (value === null) return "";
+                        var pattern = /Date\(([^)]+)\)/; //date format from server side
+                        var results = pattern.exec(value);
+                        var dt = new Date(parseFloat(results[1]));
+                        if (dt.getFullYear() === 9999) return ""; //Control para MaxValue
+                        return ('0' + dt.getDate()).slice(-2) + "-" + ('0' + (dt.getMonth() + 1)).slice(-2) + "-" + dt.getFullYear() + " " + ('0' + dt.getHours()).slice(-2) + ":" + ('0' + dt.getMinutes()).slice(-2) + ":" + ('0' + dt.getSeconds()).slice(-2);
+                    }
+
+
+
+
+                },
+
+                {
+                    "data": "Mensaje",
+                    "render": function (data, type, row, meta) {
+                        if (type === 'display') {
+                            data = '<a    href=' + data + '' + "Mensaje" + '</a>';
+                        }
+
+                        return data;
+                    }
+                },
+                {
+                    "data": null, render: function (data, type, row) {
+                        // Combinar campos
+                        return `${row.ErrorId}</br>${row.CategoriaMail}</br> ${row.IdRemitente}</br>`
+
+                    }
+                },
+
+
+
+                 { "data": "Asunto"}
+
+               
+
+              ],
+            
+            
+              "language": {
+                  "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
+              }
+               
+          });
+
+
+
+    </script>
+
+}
