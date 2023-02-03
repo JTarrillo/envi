@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Resumen</a></li>
+    <li class="breadcrumb-item active">Mensaje</li>
+</ol>
+
+
+<div class="card">
+    <div class="card-header">
+
+        <i class="fas fa-users me-1"></i> Mensaje
+    </div>
+
+    <div class="card-body">
+
+
+        <table id="tabla_Mensaje" class="display datatable-table dt-responsive nowrap" style="width: 100%">
+            <thead>
+
+                <tr>
+             
+                    <th>Mensaje</th>
+                 
+
+
+
+                </tr>
+            </thead>
+            <tbody style="">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script>
+
+        var tabladata;
+        jQuery.ajax(
+            {
+                url: '@Url.Action("VerMensaje", "Mensaje")',
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                   console.log(data);
+                }
+
+            })
+
+            $(document).ready(function () {
+
+                tabladata = $("#tabla_Mensaje").DataTable(
+
+            {
+
+              
+              
+                bDestroy: true,
+                autoWidth: false,
+                responsive: true,
+                ordering: false,
+
+
+
+           
+                "ajax": {
+                    url: '@Url.Action("VerMensaje", "Home")',
+                    type: "GET",
+                    dataType: "json"
+                },
+                "columns": [
+
+
+                  
+                    {
+                        "data": "Mensaje", "className": "cell text-center responsive nowrap", "width": "100%", "render": function (data, type, row) {
+                           
+                            return row.Mensaje
+                        }
+
+                    }
+                  
+
+
+                ],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json",
+
+                  
+
+                }
+
+
+            });
+               
+
+
+            });
+
+
+    </script>
+
+
+
+}
+
+
+
+
+
+

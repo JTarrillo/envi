@@ -1,0 +1,95 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EnvioDeNotificaciones
+</name>
+</assembly>
+<members>
+<member name="T:EnvioDeNotificaciones.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:EnvioDeNotificaciones.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:EnvioDeNotificaciones.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.#ctor">
+<remarks/>
+</member>
+<member name="E:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.EnviarSMSCompleted">
+<remarks/>
+</member>
+<member name="E:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.RecibirSMSCompleted">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.EnviarSMS(System.String,System.String,System.Int64,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.EnviarSMSAsync(System.String,System.String,System.Int64,System.String,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.EnviarSMSAsync(System.String,System.String,System.Int64,System.String,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.RecibirSMS(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.RecibirSMSAsync(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.RecibirSMSAsync(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+<remarks/>
+</member>
+<member name="M:EnvioDeNotificaciones.WSSMSMasivos.SMSMasivosAPI.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta.numero">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta.texto">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta.fecha">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta.idsms">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.clsRespuesta.idinterno">
+<remarks/>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.EnviarSMSCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.EnviarSMSCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.EnviarSMSCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.RecibirSMSCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:EnvioDeNotificaciones.WSSMSMasivos.RecibirSMSCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:EnvioDeNotificaciones.WSSMSMasivos.RecibirSMSCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

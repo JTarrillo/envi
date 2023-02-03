@@ -1,0 +1,325 @@
+﻿
+@{
+    ViewBag.Title = "EnvioMail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Resumen</a></li>
+    <li class="breadcrumb-item active">Envio De Notificaciones</li>
+</ol>
+
+<!--<div class="input-group mb-3">
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">Filtro</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select>
+
+
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom02" class="form-label">Buscar</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">En</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary btn-bloc" type="submit">Mostrar</button>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Remitente</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+
+
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Destinatario</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+
+
+        </div>
+      
+
+            <div class="col-md-4">
+                <label for="validationCustom04" class="form-label">Categoria</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom04" class="form-label">Orden</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+      
+    </form>-->
+
+    @*<form id="formFecha" >
+        <table>
+            <tr>
+                <td>
+                    <input type='text' readonly id='buscar_inicio' class="datepicker form-control mt-4" placeholder='Fecha Mail' >
+                </td>
+                <td>
+                    <input type='text' readonly id='buscar_fin' class="datepicker form-control mt-4" placeholder='Fecha fin' >
+                </td>
+                <td>
+                    <input type='button' id="btn_search" value="Buscar" class="btn btn-primary mb-2  ">
+                </td>
+                <td>
+                    <input type='button' id="btnLimpiar" value="Limpiar" class="btn btn-danger mb-2 ">
+                </td>
+            </tr>
+        </table>
+    </form>*@
+<!--</div>-->
+    <div class="card">
+        <div class="card-header">
+
+            <i class="fas fa-users me-1"></i> Envio De Mail
+        </div>
+
+        <div class="card-body">
+
+
+            <table id="tabla" class="display datatable-table dt-responsive nowrap" style="width: 100%">
+                <thead>
+
+                    <tr>
+                        <th>Descripcion</th>
+                        <th>NombreArchivo</th>
+                        <th>Motivo</th>
+                        <th>Nombre y Direccion</th>
+                        <th>Mensaje</th>
+                        <th>Fecha de Mail</th>
+                        <th>Fecha de Envio</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody style="">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    @section scripts{
+
+        <script>
+
+        var tabladata;
+        jQuery.ajax(
+            {
+                url: '@Url.Action("ListarEnvios", "Home")',
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                   console.log(data);
+                }
+
+            })
+
+            $(document).ready(function () {
+
+        tabladata = $("#tabla").DataTable(
+
+            {
+
+                //createdRow: function (row, data, dataIndex) {
+                //    // Set the data-status attribute, and add a class
+                //    $(row).addClass("all-row");
+                //},
+                ////"paging": true,
+                //"dom": 'Bitp',
+                //searching: true,
+                searchPanes: {
+                    cascadePanes: true,
+                    dtOpts: {
+                        dom: 'tp',
+                        paging: 'true',
+                        pagingType: 'simple',
+                        searching: false
+                    }
+                },
+                dom: 'Pfrtip',
+                bDestroy: true,
+                autoWidth: false,
+                responsive: true,
+                ordering: false,
+
+
+
+              /*  "dom": "ft<'row'<'col-12 col-md-6'i><'col-12 col-md-6'<'d-flex justify-content-center justify-content-md-end'p>>>",*/
+                "ajax": {
+                    url: '@Url.Action("ListarEnvios", "Home")',
+                    type: "GET",
+                    dataType: "json"
+                },
+                "columns": [
+
+
+                    {
+                        "data": "oCategoria", "className": "cell text-center","render": function (data, type, row) {
+                            // Combinar campos
+                            return data.Descripcion
+                        }
+                    },
+                    {
+                        "data": "oAdjuntosMail", "className": "cell text-center","render": function (data, type, row) {
+                            // Combinar campos
+                            return data.NombreArchivo
+                        }
+                    },
+                    //{
+                    //    "data": null, render: function (data, type, row) {
+                    //        // Combinar campos
+                    //        return `${row.IdRemitente}</br>${row.CategoriaMail}</br> ${row.Asunto}</br>`
+                    //    }
+                    //},
+
+
+                       {
+                           "data": "oErrorSendMail", "className": "cell text-center", "render": function (data, type, row) {
+                            // Combinar campos
+                               return data.Motivo
+                        }
+                    },
+                          {
+                              "data": "oDireccionesMail", "className": "cell text-center", "width":"25%" , "render": function (data, type, row) {
+                            // Combinar campos
+                                  return `${data.Nombre}</br>${data.Direccion}</br>`
+                        }
+                    },
+
+                    {
+                        "data": "Mensaje", "className": "cell text-center ", "width": "10%", "render": function (data, type, row) {
+                            // Combinar campos
+                            return `<a role"button"  href="@Url.Action("Index", "Mensaje")"  target="_blank" onClick="${data.Id}" class="dropdown-item"><i class="fas fa-eye"></i> Mensaje</a>`;
+                        }
+
+                    },
+                    {
+                        "data": "Fecha", "name": "Fecha de Mail", "className": "cell text-center", "render": function (value) {
+                            if (value === null) return "";
+                            var pattern = /Date\(([^)]+)\)/; //date format from server side
+                            var results = pattern.exec(value);
+                            var dt = new Date(parseFloat(results[1]));
+                            if (dt.getFullYear() === 9999) return ""; //Control para MaxValue
+                            return ('0' + dt.getDate()).slice(-2) + "-" + ('0' + (dt.getMonth() + 1)).slice(-2) + "-" + dt.getFullYear() + " " + ('0' + dt.getHours()).slice(-2) + ":" + ('0' + dt.getMinutes()).slice(-2) + ":" + ('0' + dt.getSeconds()).slice(-2);
+
+
+                        }
+                    },
+                    {
+                        "data": "FechaEnvio", "name":"Fecha de Envio", "className": "cell text-center", "render": function (value) {
+                            if (value === null) return "";
+                            var pattern = /Date\(([^)]+)\)/; //date format from server side
+                            var results = pattern.exec(value);
+                            var dt = new Date(parseFloat(results[1]));
+                            if (dt.getFullYear() === 9999) return ""; //Control para MaxValue
+                            return ('0' + dt.getDate()).slice(-2) + "-" + ('0' + (dt.getMonth() + 1)).slice(-2) + "-" + dt.getFullYear() + " " + ('0' + dt.getHours()).slice(-2) + ":" + ('0' + dt.getMinutes()).slice(-2) + ":" + ('0' + dt.getSeconds()).slice(-2);
+
+
+                        }
+                    }
+
+
+      //              {
+      //                  "data": "Mensaje",
+      //                  "render": function (data, type, row, meta) {
+
+      //                      return `<a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						//	<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						//		<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						//		<circle cx="5" cy="12" r="1" />
+						//		<circle cx="12" cy="12" r="1" />
+						//		<circle cx="19" cy="12" r="1" />
+						//	</svg>
+						//</a>
+      //                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						//<a role"button" onClick="editModal(${row.Mensaje})" class="dropdown-item"><i class="fas fa-pen text-danger"></i> Editar</a>
+						//<a role"button" onClick="createModalItems(${row.Mensaje})" class="dropdown-item"><i class="fas fa-plus text-success"></i> Agregar Item</a>
+						//<div class="dropdown-divider"></div>
+						//<a role"button" onClick="changeStatus(${row.Mensaje})" class="dropdown-item"><i class="fas ${row.ErrorId == 1 ? 'fa-ban text-danger' : 'fa-check text-success'}"></i> ${row.STATUS == 1 ? 'Inhabilitar' : 'Habilitar'}</a>
+					 // </div>`;
+      //                  }
+      //              },
+
+              /*      { "data": "Id", "name": "Adjuntos"  }*/
+
+
+                    //    {
+                    //        "data": null, render: function (value) {
+
+                    //            // Combinar campos
+                    //          /*  return `PersonalizarFecha(${row.Fecha})</br>PersonalizarFecha(${row.FechaEnvio})</br>`*/
+
+                    //        }
+
+
+                    //}
+
+
+
+
+                ],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json",
+
+                        //"oPaginate": {
+                        //    "sFirst": "Primero",
+                        //    "sLast": "Último",
+                        //    "sNext": "Siguiente",
+                        //    "sPrevious": "Anterior"
+                        //},
+
+
+
+                }
+
+
+            });
+                //$('#tabla thead tr').clone(true).appendTo('#tabla thead');
+                //$('#tabla thead tr:eq(1) th').each(function (i) {
+                //    var title = $(this).text(); //es el nombre de la columna
+                //    $(this).html('<input class="" style="width: 100%" type="text" ' + title + '" />');
+
+                //    $('input', this).on('keyup change', function () {
+                //        if (tabladata.column(i).search() !== this.value) {
+                //            tabladata
+                //                .column(i)
+                //                .search(this.value)
+                //                .draw();
+                //        }
+                //    });
+                //});
+
+
+            });
+
+
+         
+        </script>
+
+
+
+    }
+
+
+
+

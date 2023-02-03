@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClasesyFunciones">
+      <HintPath>..\..\..\..\..\Proyectos\Librerias\ClasesyFunciones.dll</HintPath>
+    </Reference>
+    <Reference Include="LogActualizacion">
+      <HintPath>..\..\..\Proyectos\Librerias\LogActualizacion.dll</HintPath>
+    </Reference>
+    <Reference Include="SeguridadClases">
+      <HintPath>..\..\..\..\..\Proyectos\Librerias\SeguridadClases.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -44,9 +53,15 @@
   <ItemGroup>
     <Compile Include="CD_EnvioMail.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Funciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prueba.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Testeando\EnvioDeNotificaciones\EnvioDeNotificaciones\EnvioDeNotificaciones.vbproj">
+      <Project>{40cf3fd9-3a79-40da-ac8a-0961bb52a41d}</Project>
+      <Name>EnvioDeNotificaciones</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
       <Project>{f36baedf-2ff8-4b1b-a44d-66d2767feaa4}</Project>
       <Name>CapaEntidad</Name>

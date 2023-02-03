@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using CapaDatos;
 using CapaEntidad;
-
 namespace CapaNegocio
 {
     public class CN_EnvioMail
@@ -15,6 +10,14 @@ namespace CapaNegocio
         public List<EnvioMail> Listar()
         {
             return objCapaDato.Listar();
+        }
+
+
+
+        public bool VerMensaje(int Id)
+        {
+
+            return objCapaDato.VerMensaje(Id);
         }
     }
 }
